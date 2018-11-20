@@ -1,0 +1,15 @@
+#!/bin/sh
+
+id_coeffs(){
+(
+cd /dev/dsp1
+for ch in $(seq 16)
+do
+echo $((ch*10)) > m$(printf %02d $ch)
+echo $((ch+100)) > c$(printf %02d $ch)
+done
+)
+}
+
+id_coeffs
+
