@@ -1,0 +1,20 @@
+#!/bin/sh
+
+MDIR=/usr/local/lib/modules
+/sbin/insmod $MDIR/debugfs2.ko
+/sbin/insmod $MDIR/regfs.ko
+/sbin/insmod $MDIR/acq400_dspfs.ko
+ln -s /sys/kernel/debug/dsp1/ /dev/dsp1
+
+
+cat /usr/local/CARE/CUSTOM_FB9816/custom_fb9816-regdef > /dev/dsp1/.create
+
+mkdir /etc/acq400/14/
+ln -s /dev/dsp1/* /etc/acq400/14/
+
+
+/usr/local/bin/monitor_dsp1 2>&1 >/dev/null  &
+
+echo "DSP site 14 active on 4234"
+
+
