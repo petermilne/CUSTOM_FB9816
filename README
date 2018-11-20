@@ -1,0 +1,9 @@
+CUSTOM_FB9816:
+
+Support for DSP FEEDBACK Module, transfers 16AI to 16AO 
+
+where
+
+AOcc = m.AIcc + c
+
+

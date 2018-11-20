@@ -1,0 +1,25 @@
+# dsp_regdef for DSP 9816, AI->DSP->AO
+# NB: use spaces
+#123456789012
+MOD_ID      0x0000 0xffffffff r %x
+CTRL        0x0004 0xffffffff r %x
+CTRL.EN     0x0004 0x00000001 rw %d
+STA         0x0008 0xffffffff r %x
+# coefficients y = mx + c
+m02m01      0x1000 0xffffffff rw %x
+c02c01      0x1004 0xffffffff rw %x
+m04m03      0x1008 0xffffffff rw %x
+c04c03      0x100c 0xffffffff rw %x
+m06m05      0x1010 0xffffffff rw %x
+c06c05      0x1014 0xffffffff rw %x
+m08m07      0x1018 0xffffffff rw %x
+c08c07      0x101c 0xffffffff rw %x
+m10m09      0x1020 0xffffffff rw %x
+c10c09      0x1024 0xffffffff rw %x
+m12m11      0x1028 0xffffffff rw %x
+c12c11      0x102c 0xffffffff rw %x
+m14m13      0x1020 0xffffffff rw %x
+c14c13      0x1024 0xffffffff rw %x
+m16m15      0x1028 0xffffffff rw %x
+c16c15      0x102c 0xffffffff rw %x
+
