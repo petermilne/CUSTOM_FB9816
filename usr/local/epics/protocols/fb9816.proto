@@ -18,3 +18,9 @@ getSta {
 	out "STA";
 	in "%x";
 }
+
+setFun {
+# $1: m|c $2: ch
+	out "\$1\$2 %d";
+	int "";	
+}

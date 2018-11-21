@@ -1,0 +1,13 @@
+pfn# define a single value for FB
+
+# user sets this value
+#
+
+
+# physical output
+
+record (longout, "${UUT}:${SITE}:${FUN}:${CH}") {
+       field(DTYP, "stream")
+       field(OUT,  "@fb9816.proto setFun(${pfn} ${CH}) ${SPORT}")
+}
+
