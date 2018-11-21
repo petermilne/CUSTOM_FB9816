@@ -17,7 +17,11 @@ record(ao, "${UUT}:${SITE}:${FUN}:${CH}") {
 	field(EOFF, "0")
     field(LINR, "SLOPE")
     field(DRVH, "63")
-    field(DRVL, "-63")	
+    field(DRVL, "-63")
+	field(HOPR, "60")
+	field(LOPR, "-60")
+	field(DESC, "${FUN} for ${CH}")
+	field(PINI, "YES")
 }
 
 # physical output
