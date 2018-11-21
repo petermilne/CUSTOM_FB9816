@@ -16,8 +16,8 @@ record(ao, "${UUT}:${SITE}:${FUN}:${CH}") {
 	field(ESLO, "0.001953125")
 	field(EOFF, "0")
     field(LINR, "SLOPE")
-    field(DRVH, "100")
-    field(DRVL, "-100")	
+    field(DRVH, "63")
+    field(DRVL, "-63")	
 }
 
 # physical output
