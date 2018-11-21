@@ -1,0 +1,18 @@
+record (stringin, "${UUT}:${SITE}:MODEL") {
+        field(DTYP, "stream")
+        field(INP, "@fb9816.proto getModel ${SPORT}")
+        field(PINI, "YES")
+}
+
+record (bo, "${UUT}:${SITE}:ENABLE") {
+        field(DTYP, "stream")
+        field(OUT, "@fb9816.proto setEnable ${SPORT}")
+}
+
+record (longin, "${UUT}:${SITE}:STATUS") {
+	field(DTYP, "stream")
+	field(SCAN, "1 second")
+	field(INP,  "@fb9816.proto getSta ${SPORT}")
+}
+
+

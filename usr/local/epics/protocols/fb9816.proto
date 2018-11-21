@@ -1,0 +1,32 @@
+# @fb9816.proto getModel
+
+Terminator = LF;
+ExtraInput = Ignore;
+
+
+getModel {
+	out "MOD_ID";
+	in "%s";
+}
+
+setEnable {
+	out "CTRL.EN %d";
+	in "";
+}
+
+getSta {
+	out "STA";
+	in "%x";
+}
+
+setFun {
+# $1: m|c $2: ch
+	out "\$1\$2 0x%x";
+	in "";	
+}
+
+getFun {
+# $1: m|c $2: ch
+	out "\$1\$2";
+	in "%x";	
+}

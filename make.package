@@ -9,7 +9,7 @@ rm -Rf opkg/*
 mkdir -p opkg release
 
 cp -a usr opkg
-
+cp README opkg/usr/local/init/$PKG.README
 
 
 tar cvzf release/${SEQ}-${PKG}-${DC}.tgz -C opkg .

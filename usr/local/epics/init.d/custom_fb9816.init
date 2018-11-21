@@ -1,0 +1,16 @@
+# source me
+echo "# custom_fb9816 init starts"
+
+create_asyn_channel S14 127.0.0.1:4234
+CPRAMS="UUT=${HOST},SITE=14,SPORT=S14"
+dblr '"db/fb9816.db","'${CPRAMS}'"'
+
+
+for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16; do
+	dblr '"db/fb9816_ch.db","'${CPRAMS},pfn=m,FUN=GAIN,CH=${ch}'"'
+	dblr '"db/fb9816_ch.db","'${CPRAMS},pfn=c,FUN=OFFSET,CH=${ch}'"'
+done
+
+echo "# custom_fb9816 init ends"
+
+
