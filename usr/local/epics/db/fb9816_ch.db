@@ -4,30 +4,53 @@
 #
 
 # 0 -> 0
-# 512 -> 1.0
-# 5120-> 10.0
-# 1/512 = 0.001953125
+# 256 -> 1.0
+# 2560-> 10.0
+# 1/256 = 0.00390625
 # send RVAL to target
 
-record(ao, "${UUT}:${SITE}:${FUN}:${CH}") {
+record(ao, "${UUT}:${SITE}:GAIN:${CH}") {
 	field(DTYP, "Raw Soft Channel")
-    field(OUT, "${UUT}:${SITE}:${FUN}:${CH}:raw")
+    field(OUT,  "${UUT}:${SITE}:${FUN}:${CH}:raw")
 	field(FLNK, "${UUT}:${SITE}:${FUN}:${CH}:raw")
-	field(ESLO, "0.001953125")
+	field(ESLO, "0.00390625")
 	field(EOFF, "0")
     field(LINR, "SLOPE")
-    field(DRVH, "63")
-    field(DRVL, "-63")
-	field(HOPR, "60")
-	field(LOPR, "-60")
+    field(DRVH, "127")
+    field(DRVL, "-127")
+	field(HOPR, "120")
+	field(LOPR, "-120")
 	field(DESC, "${FUN} for ${CH}")
 	field(PINI, "YES")
 }
 
 # physical output
 
-record (longout, "${UUT}:${SITE}:${FUN}:${CH}:raw") {
+record (longout, "${UUT}:${SITE}:GAIN:${CH}:raw") {
 	field(DTYP, "stream")
-    field(OUT,  "@fb9816.proto setFun(${pfn},${CH}) ${SPORT}")
+    field(OUT,  "@fb9816.proto setFun(m,${CH}) ${SPORT}")
 }
 
+# 10/256
+record(ao, "${UUT}:${SITE}:OFFSET:${CH}") {
+	field(DTYP, "Raw Soft Channel")
+    field(OUT,  "${UUT}:${SITE}:${FUN}:${CH}:raw")
+	field(FLNK, "${UUT}:${SITE}:${FUN}:${CH}:raw")
+	field(ESLO, "0.000307579")
+	field(EOFF, "0")
+    field(LINR, "SLOPE")
+    field(DRVH, "10")
+    field(DRVL, "-10")
+	field(HOPR, "10")
+	field(LOPR, "-10")
+	field(DESC, "${FUN} for ${CH}")
+	field(PINI, "YES")
+	field(EGU, "V")
+}
+
+# physical output
+
+record (longout, "${UUT}:${SITE}:OFFSET:${CH}:raw") {
+	field(DTYP, "stream")
+    field(OUT,  "@fb9816.proto setFun(c,${CH}) ${SPORT}")
+}
