@@ -17,7 +17,7 @@ record(ao, "${UUT}:${SITE}:${FUN}:${CH}") {
 	field(EOFF, "0")
     field(LINR, "SLOPE")
     field(DRVH, "100")
-    field(DRVH, "-100")	
+    field(DRVL, "-100")	
 }
 
 # physical output
