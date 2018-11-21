@@ -6,12 +6,14 @@
 # 0 -> 0
 # 512 -> 1.0
 # 5120-> 10.0
+# 1/512 = 0.001953125
+# send RVAL to target
 
 record(ao, "${UUT}:${SITE}:${FUN}:${CH}") {
-	field(DTYP, "Soft Channel)
+	field(DTYP, "Raw Soft Channel")
     field(OUT, "${UUT}:${SITE}:${FUN}:${CH}:raw")
 	field(FLNK, "${UUT}:${SITE}:${FUN}:${CH}:raw")
-	field(ESLO, "512")
+	field(ESLO, "0.001953125")
 	field(EOFF, "0")
     field(LINR, "SLOPE")
     field(DRVH, "100")
