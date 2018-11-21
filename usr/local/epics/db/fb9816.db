@@ -1,0 +1,7 @@
+record (stringin, "${UUT}:${SITE}:MODEL") {
+        field(DTYP, "stream")
+        field(INP, "@fb9816.proto getModel ${SPORT}")
+        field(PINI, "YES")
+}
+
+

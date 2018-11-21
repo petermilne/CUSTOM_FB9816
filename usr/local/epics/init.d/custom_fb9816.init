@@ -1,6 +1,10 @@
 # source me
 echo "# custom_fb9816 init starts"
 
+create_asyn_channel S14 127.0.0.1:4234
+CPRAMS="UUT=${HOST},SITE=14,SPORT=S14"
+dblr '"db/fb9816.db","'${CPRAMS}'"'
+
 echo "# custom_fb9816 init ends"
 
 

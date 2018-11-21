@@ -1,0 +1,11 @@
+# @fb9816.proto getModel
+
+Terminator = LF;
+ExtraInput = Ignore;
+
+
+getModel {
+	out "MOD_ID";
+	in "%s";
+}
+
