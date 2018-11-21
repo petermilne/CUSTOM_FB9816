@@ -11,6 +11,7 @@ record (bo, "${UUT}:${SITE}:ENABLE") {
 
 record (longin, "${UUT}:${SITE}:STATUS") {
 	field(DTYP, "stream")
+	field(SCAN, "1 second")
 	field(INP,  "@fb9816.proto getSta ${SPORT}")
 }
 
