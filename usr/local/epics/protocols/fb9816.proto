@@ -9,3 +9,12 @@ getModel {
 	in "%s";
 }
 
+setEnable {
+	out "CTRL.EN %d";
+	in "";
+}
+
+getSta {
+	out "STA";
+	in "%x";
+}
