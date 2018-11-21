@@ -24,7 +24,8 @@ C4R8=/dev/shm/c4R8
 
 
 dump_k() {
-	(cd /dev/dsp1; /usr/local/bin/lscat [cm]*)
+	(cd /dev/dsp1; 
+	/usr/local/bin/lscat c0[1-8]* m0[1-8]* c09* c1* m09* m1*)
 }
 
 dump_r() {
