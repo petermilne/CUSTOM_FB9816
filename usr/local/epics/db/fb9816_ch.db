@@ -1,13 +1,27 @@
-pfn# define a single value for FB
+# define a single value for FB
 
 # user sets this value
 #
 
+# 0 -> 0
+# 512 -> 1.0
+# 5120-> 10.0
+
+record(ao, "${UUT}:${SITE}:${FUN}:${CH}") {
+	field(DTYP, "Soft Channel)
+    field(OUT, "${UUT}:${SITE}:${FUN}:${CH}:raw")
+	field(FLNK, "${UUT}:${SITE}:${FUN}:${CH}:raw")
+	field(ESLO, "512")
+	field(EOFF, "0")
+    field(LINR, "SLOPE")
+    field(DRVH, "100")
+    field(DRVH, "-100")	
+}
 
 # physical output
 
-record (longout, "${UUT}:${SITE}:${FUN}:${CH}") {
-       field(DTYP, "stream")
-       field(OUT,  "@fb9816.proto setFun(${pfn} ${CH}) ${SPORT}")
+record (longout, "${UUT}:${SITE}:${FUN}:${CH}:raw") {
+	field(DTYP, "stream")
+    field(OUT,  "@fb9816.proto setFun(${pfn},${CH}) ${SPORT}")
 }
 

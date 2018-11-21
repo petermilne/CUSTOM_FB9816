@@ -21,6 +21,12 @@ getSta {
 
 setFun {
 # $1: m|c $2: ch
-	out "\$1\$2 %d";
-	int "";	
+	out "\$1\$2 %x";
+	in "";	
+}
+
+getFun {
+# $1: m|c $2: ch
+	out "\$1\$2";
+	in "%x";	
 }
