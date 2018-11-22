@@ -11,8 +11,8 @@
 
 record(ao, "${UUT}:${SITE}:GAIN:${CH}") {
 	field(DTYP, "Raw Soft Channel")
-    field(OUT,  "${UUT}:${SITE}:${FUN}:${CH}:raw")
-	field(FLNK, "${UUT}:${SITE}:${FUN}:${CH}:raw")
+    field(OUT,  "${UUT}:${SITE}:GAIN:${CH}:raw")
+	field(FLNK, "${UUT}:${SITE}:GAIN:${CH}:raw")
 	field(ESLO, "0.00390625")
 	field(EOFF, "0")
     field(LINR, "SLOPE")
@@ -20,7 +20,7 @@ record(ao, "${UUT}:${SITE}:GAIN:${CH}") {
     field(DRVL, "-127")
 	field(HOPR, "120")
 	field(LOPR, "-120")
-	field(DESC, "${FUN} for ${CH}")
+	field(DESC, "GAIN for ${CH}")
 	field(PINI, "YES")
 }
 
@@ -34,8 +34,8 @@ record (longout, "${UUT}:${SITE}:GAIN:${CH}:raw") {
 # 10/256
 record(ao, "${UUT}:${SITE}:OFFSET:${CH}") {
 	field(DTYP, "Raw Soft Channel")
-    field(OUT,  "${UUT}:${SITE}:${FUN}:${CH}:raw")
-	field(FLNK, "${UUT}:${SITE}:${FUN}:${CH}:raw")
+    field(OUT,  "${UUT}:${SITE}:OFFSET:${CH}:raw")
+	field(FLNK, "${UUT}:${SITE}:OFFSET:${CH}:raw")
 	field(ESLO, "0.000307579")
 	field(EOFF, "0")
     field(LINR, "SLOPE")
@@ -43,7 +43,7 @@ record(ao, "${UUT}:${SITE}:OFFSET:${CH}") {
     field(DRVL, "-10")
 	field(HOPR, "10")
 	field(LOPR, "-10")
-	field(DESC, "${FUN} for ${CH}")
+	field(DESC, "OFFSET for ${CH}")
 	field(PINI, "YES")
 	field(EGU, "V")
 }
