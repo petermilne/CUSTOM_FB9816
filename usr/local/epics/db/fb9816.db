@@ -15,4 +15,28 @@ record (longin, "${UUT}:${SITE}:STATUS") {
 	field(INP,  "@fb9816.proto getSta ${SPORT}")
 }
 
+# mbbiDirect : easily done, but we'd need a FLNK to actual status bo values
+# eg FLNK STATUS:OR,   INP STATUS:B.B0
+#record (mbbiDirect, "${UUT}:${SITE}:STATUS:B") {
+#	field(DTYP, "stream")
+#	field(SCAN, "1 second")
+#	field(INP,  "@fb9816.proto getSta ${SPORT}")
+#        field(NOBT, "16")
+#}
+
+# CH1:MASTER : bo
+# fanout as per gainM, but with DISA/DISV set
+#record(dfanout, "${UUT}:${SITE}:GAIN:fan1") {
+    #field(DOL,  "${UUT}:${SITE}:GAIN:${CH}")
+    #field(OMSL, "closed_loop")
+    #field(FLNK, "${UUT}:${SITE}:GAIN:fan2")
+#}
+
+
+# gain_ch:
+# record(dfanout, "${UUT}:${SITE}:GAIN:fan${FAN}") {
+#    field(OUT${fan}, "${UUT}:${SITE}:GAIN:${CH} PP")
+#}
+
+# and add FAN, fan to script.
 
