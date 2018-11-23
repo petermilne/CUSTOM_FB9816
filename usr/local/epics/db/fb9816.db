@@ -40,24 +40,32 @@ record(longout, "${UUT}:${SITE}:OFFSET:01:raw") {
 }
 
 # gain_ch:
-record(dfanout, "${UUT}:${SITE}:GAIN:fan0108") {    
+record(dfanout, "${UUT}:${SITE}:GAIN:fan0108") { 
+	field(DOL, "${UUT}:${SITE}:GAIN:01")   
+	field(OMSL, "closed_loop")
 	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
 	field(DISV, "0")
 	field(FLNK, "${UUT}:${SITE}:GAIN:fan0916")
 }
 
 record(dfanout, "${UUT}:${SITE}:GAIN:fan0916") {
+	field(DOL, "${UUT}:${SITE}:GAIN:01")   
+	field(OMSL, "closed_loop")	
 	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
 	field(DISV, "0")	
 }
 
 record(dfanout, "${UUT}:${SITE}:OFFSET:fan0108") {
+	field(DOL, "${UUT}:${SITE}:OFFSET:01")   
+	field(OMSL, "closed_loop")	
 	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
 	field(DISV, "0")
 	field(FLNK, "${UUT}:${SITE}:OFFSET:fan0916")	
 }
 
 record(dfanout, "${UUT}:${SITE}:OFFSET:fan0916") {
+	field(DOL, "${UUT}:${SITE}:OFFSET:01")   
+	field(OMSL, "closed_loop")	
 	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
 	field(DISV, "0")	
 }
