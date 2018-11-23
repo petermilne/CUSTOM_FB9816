@@ -31,18 +31,11 @@ record (bo, "${UUT}:${SITE}:CH01_MASTER") {
 	field(DTYP, "Soft Channel")	
 }
 
-# fanout as per gainM, but with DISA/DISV set
-#record(dfanout, "${UUT}:${SITE}:GAIN:fan1") {
-    #field(DOL,  "${UUT}:${SITE}:GAIN:${CH}")
-    #field(OMSL, "closed_loop")
-    #field(FLNK, "${UUT}:${SITE}:GAIN:fan2")
-#}
-
-record(ao, "${UUT}:${SITE}:GAIN:01:raw") {
+record(longout, "${UUT}:${SITE}:GAIN:01:raw") {
 	field(FLNK, "${UUT}:${SITE}:GAIN:fan0108")	
 }
 
-record(ao, "${UUT}:${SITE}:OFFSET:01:raw") {
+record(longout, "${UUT}:${SITE}:OFFSET:01:raw") {
 	field(FLNK, "${UUT}:${SITE}:OFFSET:fan0108")	
 }
 
@@ -71,3 +64,14 @@ record(dfanout, "${UUT}:${SITE}:OFFSET:fan0916") {
 
 # and add FAN, fan to script.
 
+record(longout, "${UUT}:${SITE}:OFFSET:ZERO") {
+	field(VAL, "0")
+	field(PINI, "YES")
+	field(OUT, "${UUT}:${SITE}:OFFSET:01")	
+}
+
+record(longout, "${UUT}:${SITE}:GAIN:ONE") {
+	field(VAL, "1")
+	field(PINI, "YES")
+	field(OUT, "${UUT}:${SITE}:GAIN:01")	
+}

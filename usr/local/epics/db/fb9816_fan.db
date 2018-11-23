@@ -1,0 +1,7 @@
+record(dfanout, "${UUT}:${SITE}:GAIN:${FAN}") {
+	field(OUT${fan}, "${UUT}:${SITE}:GAIN:${CH} PP")
+}
+
+record(dfanout, "${UUT}:${SITE}:OFFSET:${FAN}") {
+	field(OUT${fan}, "${UUT}:${SITE}:OFFSET:${CH} PP")
+}

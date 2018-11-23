@@ -31,9 +31,6 @@ record (longout, "${UUT}:${SITE}:GAIN:${CH}:raw") {
     field(OUT,  "@fb9816.proto setFun(m,${CH}) ${SPORT}")
 }
 
-record(dfanout, "${UUT}:${SITE}:GAIN:${FAN}") {
-	field(OUT${fan}, "${UUT}:${SITE}:GAIN:${CH} PP")
-}
 
 
 # 10/256
@@ -60,8 +57,4 @@ record (longout, "${UUT}:${SITE}:OFFSET:${CH}:raw") {
     field(OUT,  "@fb9816.proto setFun(c,${CH}) ${SPORT}")
 }
 
-record(dfanout, "${UUT}:${SITE}:OFFSET:${FAN}") {
-	field(OUT${fan}, "${UUT}:${SITE}:OFFSET:${CH} PP")
-}
 
-record

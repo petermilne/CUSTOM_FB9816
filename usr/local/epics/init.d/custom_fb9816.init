@@ -24,13 +24,15 @@ ch2out() {
 for ch in 01 02 03 04 05 06 07 08; do
 	FAN=fan0108
 	fan=$(ch2out $ch)
-	dblr '"db/fb9816_ch.db","'${CPRAMS},CH=${ch},FAN=$FAN,fan=$fan'"'
+	dblr '"db/fb9816_ch.db","'${CPRAMS},CH=${ch}'"'
+	[ "$ch" != "01" ] && dblr '"db/fb9816_fan.db","'${CPRAMS},CH=${ch},FAN=$FAN,fan=$fan'"'
 done
 
 for ch in 09 10 11 12 13 14 15 16; do
 	FAN=fan0916
 	fan=$(ch2out $ch)
-	dblr '"db/fb9816_ch.db","'${CPRAMS},CH=${ch},FAN=$FAN,fan=$fan'"'
+	dblr '"db/fb9816_ch.db","'${CPRAMS},CH=${ch}'"'
+	dblr '"db/fb9816_fan.db","'${CPRAMS},CH=${ch},FAN=$FAN,fan=$fan'"'
 done
 
 echo "# custom_fb9816 init ends"
