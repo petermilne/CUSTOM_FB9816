@@ -24,7 +24,13 @@ record (longin, "${UUT}:${SITE}:STATUS") {
 #        field(NOBT, "16")
 #}
 
+
 # CH1:MASTER : bo
+
+record (bo, "${UUT}:${SITE}:CH01_MASTER") {
+	field(DTYP, "Soft Channel")	
+}
+
 # fanout as per gainM, but with DISA/DISV set
 #record(dfanout, "${UUT}:${SITE}:GAIN:fan1") {
     #field(DOL,  "${UUT}:${SITE}:GAIN:${CH}")
@@ -32,11 +38,36 @@ record (longin, "${UUT}:${SITE}:STATUS") {
     #field(FLNK, "${UUT}:${SITE}:GAIN:fan2")
 #}
 
+record(ao, "${UUT}:${SITE}:GAIN:01:raw") {
+	field(FLNK, "${UUT}:${SITE}:GAIN:fan0108")	
+}
+
+record(ao, "${UUT}:${SITE}:OFFSET:01:raw") {
+	field(FLNK, "${UUT}:${SITE}:OFFSET:fan0108")	
+}
 
 # gain_ch:
-# record(dfanout, "${UUT}:${SITE}:GAIN:fan${FAN}") {
-#    field(OUT${fan}, "${UUT}:${SITE}:GAIN:${CH} PP")
-#}
+record(dfanout, "${UUT}:${SITE}:GAIN:fan0108") {    
+	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
+	field(DISV, "0")
+	field(FLNK, "${UUT}:${SITE}:GAIN:fan0916")
+}
+
+record(dfanout, "${UUT}:${SITE}:GAIN:fan0916") {
+	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
+	field(DISV, "0")	
+}
+
+record(dfanout, "${UUT}:${SITE}:OFFSET:fan0108") {
+	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
+	field(DISV, "0")
+	field(FLNK, "${UUT}:${SITE}:OFFSET:fan0916")	
+}
+
+record(dfanout, "${UUT}:${SITE}:OFFSET:fan0916") {
+	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
+	field(DISV, "0")	
+}
 
 # and add FAN, fan to script.
 
