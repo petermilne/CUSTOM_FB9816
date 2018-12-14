@@ -6,4 +6,6 @@ where
 
 AOcc = m.AIcc + c
 
+/usr/local/CARE/ini_coeffs : set all c to 0 and all m to 1.0
+
 
