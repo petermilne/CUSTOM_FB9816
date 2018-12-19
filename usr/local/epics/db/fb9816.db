@@ -9,11 +9,18 @@ record (bo, "${UUT}:${SITE}:ENABLE") {
         field(OUT, "@fb9816.proto setEnable ${SPORT}")
 }
 
+record (bo, "${UUT}:${SITE}:CLEAR") {
+        field(DTYP, "stream")
+        field(OUT, "@fb9816.proto clrSta ${SPORT}")
+}
+
 record (longin, "${UUT}:${SITE}:STATUS") {
 	field(DTYP, "stream")
 	field(SCAN, "1 second")
 	field(INP,  "@fb9816.proto getSta ${SPORT}")
 }
+
+
 
 # mbbiDirect : easily done, but we'd need a FLNK to actual status bo values
 # eg FLNK STATUS:OR,   INP STATUS:B.B0
