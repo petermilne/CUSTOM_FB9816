@@ -19,6 +19,11 @@ getSta {
 	in "%x";
 }
 
+clrSta {
+	out "STA 0xf";
+	in "";
+}
+
 setFun {
 # $1: m|c $2: ch
 	out "\$1\$2 0x%x";
