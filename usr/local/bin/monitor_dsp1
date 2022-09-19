@@ -1,7 +1,7 @@
 #!/bin/sh
 
-DEV=FB9816
-DEVK=FB9816K
+DEV=FB3232
+DEVK=FB3232K
 DIR=/dev/dsp1/
 
 #httpd doesn't like names with periods..

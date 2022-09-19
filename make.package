@@ -2,7 +2,7 @@
 # BOLODSP DSP support for BOLO8
 DC=$(date +%y%m%d%H%M)
 SEQ=35
-PKG=custom_fb9816
+PKG=custom_fb3232
 PACKAGES=../../PACKAGES.OPT
 
 rm -Rf opkg/*

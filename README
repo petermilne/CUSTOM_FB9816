@@ -1,6 +1,6 @@
-CUSTOM_FB9816:
+CUSTOM_FB3232
 
-Support for DSP FEEDBACK Module, transfers 16AI to 16AO 
+Support for DSP FEEDBACK Module, transfers 32AI to 32AO, with 32 bit coeffs for GAIN and OFFSET 
 
 where
 

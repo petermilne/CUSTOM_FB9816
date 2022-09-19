@@ -28,7 +28,7 @@ record(ao, "${UUT}:${SITE}:GAIN:${CH}") {
 
 record (longout, "${UUT}:${SITE}:GAIN:${CH}:raw") {
 	field(DTYP, "stream")
-    field(OUT,  "@fb9816.proto setFun(m,${CH}) ${SPORT}")
+    field(OUT,  "@fb3232.proto setFun(m,${CH}) ${SPORT}")
 }
 
 
@@ -54,7 +54,7 @@ record(ao, "${UUT}:${SITE}:OFFSET:${CH}") {
 
 record (longout, "${UUT}:${SITE}:OFFSET:${CH}:raw") {
 	field(DTYP, "stream")
-    field(OUT,  "@fb9816.proto setFun(c,${CH}) ${SPORT}")
+    field(OUT,  "@fb3232.proto setFun(c,${CH}) ${SPORT}")
 }
 
 

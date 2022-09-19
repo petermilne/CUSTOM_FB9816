@@ -1,23 +1,23 @@
 record (stringin, "${UUT}:${SITE}:MODEL") {
         field(DTYP, "stream")
-        field(INP, "@fb9816.proto getModel ${SPORT}")
+        field(INP, "@fb3232.proto getModel ${SPORT}")
         field(PINI, "YES")
 }
 
 record (bo, "${UUT}:${SITE}:ENABLE") {
         field(DTYP, "stream")
-        field(OUT, "@fb9816.proto setEnable ${SPORT}")
+        field(OUT, "@fb3232.proto setEnable ${SPORT}")
 }
 
 record (bo, "${UUT}:${SITE}:CLEAR") {
         field(DTYP, "stream")
-        field(OUT, "@fb9816.proto clrSta ${SPORT}")
+        field(OUT, "@fb3232.proto clrSta ${SPORT}")
 }
 
 record (longin, "${UUT}:${SITE}:STATUS") {
 	field(DTYP, "stream")
 	field(SCAN, "1 second")
-	field(INP,  "@fb9816.proto getSta ${SPORT}")
+	field(INP,  "@fb3232.proto getSta ${SPORT}")
 }
 
 
@@ -27,7 +27,7 @@ record (longin, "${UUT}:${SITE}:STATUS") {
 #record (mbbiDirect, "${UUT}:${SITE}:STATUS:B") {
 #	field(DTYP, "stream")
 #	field(SCAN, "1 second")
-#	field(INP,  "@fb9816.proto getSta ${SPORT}")
+#	field(INP,  "@fb3232.proto getSta ${SPORT}")
 #        field(NOBT, "16")
 #}
 
@@ -59,6 +59,21 @@ record(dfanout, "${UUT}:${SITE}:GAIN:fan0916") {
 	field(DOL, "${UUT}:${SITE}:GAIN:01")   
 	field(OMSL, "closed_loop")	
 	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
+	field(DISV, "0")
+	field(FLNK, "${UUT}:${SITE}:GAIN:fan1724")
+}
+record(dfanout, "${UUT}:${SITE}:GAIN:fan1724") { 
+	field(DOL, "${UUT}:${SITE}:GAIN:01")   
+	field(OMSL, "closed_loop")
+	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
+	field(DISV, "0")
+	field(FLNK, "${UUT}:${SITE}:GAIN:fan2532")
+}
+
+record(dfanout, "${UUT}:${SITE}:GAIN:fan2532") {
+	field(DOL, "${UUT}:${SITE}:GAIN:01")   
+	field(OMSL, "closed_loop")	
+	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
 	field(DISV, "0")	
 }
 
@@ -74,7 +89,23 @@ record(dfanout, "${UUT}:${SITE}:OFFSET:fan0916") {
 	field(DOL, "${UUT}:${SITE}:OFFSET:01")   
 	field(OMSL, "closed_loop")	
 	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
-	field(DISV, "0")	
+	field(DISV, "0")
+	field(FLNK, "${UUT}:${SITE}:OFFSET:fan1724")
+}
+
+record(dfanout, "${UUT}:${SITE}:OFFSET:fan1724") {
+	field(DOL, "${UUT}:${SITE}:OFFSET:01")   
+	field(OMSL, "closed_loop")	
+	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
+	field(DISV, "0")
+	field(FLNK, "${UUT}:${SITE}:OFFSET:fan2532")
+}
+
+record(dfanout, "${UUT}:${SITE}:OFFSET:fan2532") {
+	field(DOL, "${UUT}:${SITE}:OFFSET:01")   
+	field(OMSL, "closed_loop")	
+	field(SDIS, "${UUT}:${SITE}:CH01_MASTER")
+	field(DISV, "0")
 }
 
 # and add FAN, fan to script.
