@@ -1,11 +1,6 @@
 #!/bin/sh
 
-MDIR=/usr/local/lib/modules
-/sbin/insmod $MDIR/debugfs2.ko
-/sbin/insmod $MDIR/regfs.ko
-/sbin/insmod $MDIR/acq400_dspfs.ko
-ln -s /sys/kernel/debug/dsp1/ /dev/dsp1
-
+/usr/local/CARE/acq400_dspfs.init
 
 cat /usr/local/CARE/CUSTOM_FB3232/custom_fb3232-regdef > /dev/dsp1/.create
 
