@@ -16,7 +16,7 @@ cat - <<EOF
 EOF
 }
 
-C4R10=/dev/shm/c4rR10
+C4R16=/dev/shm/c4R16
 C4R8=/dev/shm/c4R8
 
 [ -e $C4R16 ] || cCrR 4 16 > $C4R16
