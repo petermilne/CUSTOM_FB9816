@@ -7,17 +7,19 @@
 # 256 -> 1.0
 # 2560-> 10.0
 # 1/256 = 0.00390625
+# 1/256/65536 = 5.9604644e-8                 # scale to 32 bit
 # send RVAL to target
 
 record(ao, "${UUT}:${SITE}:GAIN:${CH}") {
 	field(DTYP, "Raw Soft Channel")
-    field(OUT,  "${UUT}:${SITE}:GAIN:${CH}:raw")
+	field(OUT,  "${UUT}:${SITE}:GAIN:${CH}:raw")
 	field(FLNK, "${UUT}:${SITE}:GAIN:${CH}:raw")
-	field(ESLO, "0.00390625")
+	#field(ESLO, "0.00390625")
+	field(ESLO, "5.9604644e-8")
 	field(EOFF, "0")
-    field(LINR, "SLOPE")
-    field(DRVH, "127")
-    field(DRVL, "-127")
+	field(LINR, "SLOPE")
+	field(DRVH, "127")
+	field(DRVL, "-127")
 	field(HOPR, "120")
 	field(LOPR, "-120")
 	field(DESC, "GAIN for ${CH}")
@@ -28,21 +30,23 @@ record(ao, "${UUT}:${SITE}:GAIN:${CH}") {
 
 record (longout, "${UUT}:${SITE}:GAIN:${CH}:raw") {
 	field(DTYP, "stream")
-    field(OUT,  "@fb3232.proto setFun(m,${CH}) ${SPORT}")
+	field(OUT,  "@fb3232.proto setFun(m,${CH}) ${SPORT}")
 }
 
 
 
-# 10/256
+# 10/0x7f00 = 0.0003070578
+# 10/0x7f00/65536 = 4.6932791e-9            # scale to 32 bit
 record(ao, "${UUT}:${SITE}:OFFSET:${CH}") {
 	field(DTYP, "Raw Soft Channel")
-    field(OUT,  "${UUT}:${SITE}:OFFSET:${CH}:raw")
+	field(OUT,  "${UUT}:${SITE}:OFFSET:${CH}:raw")
 	field(FLNK, "${UUT}:${SITE}:OFFSET:${CH}:raw")
-	field(ESLO, "0.000307579")
+	#field(ESLO, "0.000307579")
+	field(ESLO, "4.6932791e-9")
 	field(EOFF, "0")
-    field(LINR, "SLOPE")
-    field(DRVH, "10")
-    field(DRVL, "-10")
+	field(LINR, "SLOPE")
+	field(DRVH, "10")
+	field(DRVL, "-10")
 	field(HOPR, "10")
 	field(LOPR, "-10")
 	field(DESC, "OFFSET for ${CH}")
