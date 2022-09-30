@@ -19,14 +19,11 @@ EOF
 C4R10=/dev/shm/c4rR10
 C4R8=/dev/shm/c4R8
 
-#[ -e $C4R10 ] || cCrR 4 10 > $C4R10
 [ -e $C4R16 ] || cCrR 4 16 > $C4R16
-[ -e $C4R8 ] || cCrR 4 8 > $C4R8
-
 
 dump_k() {
 	(cd /dev/dsp1; 
-	/usr/local/bin/lscat m0[1-8]* c0[1-8]* m09* m1* c09* c1* )
+	/usr/local/bin/lscat m0* m1[0-6] c0* c1[0-6] m1[7-9] m[23]* c1[7-9] c[23]* )
 }
 
 dump_r() {
@@ -53,7 +50,7 @@ monitor() {
 	do
 		[ $ADDED_WEB -eq 0 ] && add_web				
 		dump_r | fs2xml --kvp -o /dev/shm/$DEV.xml -s $C4R16
-                dump_k | fs2xml --kvp -o /dev/shm/$DEVK.xml -s $C4R8
+		dump_k | fs2xml --kvp -o /dev/shm/$DEVK.xml -s $C4R16
 		sleep 1		
 	done
 }
